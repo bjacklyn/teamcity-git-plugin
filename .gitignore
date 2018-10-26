@@ -5,3 +5,5 @@
 /out
 /test-output
 .idea/workspace.xml
+.idea/*
+**/target
