@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="TeamCity patches">
     <CLASSES>
-      <root url="jar://$TeamCityDistribution$/webapps/ROOT/WEB-INF/lib/patches-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/git-server/../../TeamCity/webapps/ROOT/WEB-INF/lib/patches-impl.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

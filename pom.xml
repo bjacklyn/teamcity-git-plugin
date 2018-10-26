@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.jetbrains.plugins</groupId>
+  <artifactId>git-plugin</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <teamcity-version>2018.1.1</teamcity-version>
+    <teamcity.path>${project.basedir}/../TeamCity</teamcity.path>
+    <teamcity.path.lib>${project.basedir}/../../TeamCity/webapps/ROOT/WEB-INF/lib</teamcity.path.lib>
+    <teamcity.path.agentlib>${project.basedir}/../../TeamCity/buildAgent/lib</teamcity.path.agentlib>
+  </properties>
+
+  <repositories>
+    <repository>
+      <id>JetBrains</id>
+      <url>http://download.jetbrains.com/teamcity-repository</url>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>JetBrains</id>
+      <url>http://download.jetbrains.com/teamcity-repository</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <modules>
+    <module>git-agent</module>
+    <module>git-common</module>
+    <!--<module>git-dsl</module>-->
+    <module>git-server</module>
+    <module>git-server-tc</module>
+    <module>build</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <version>3.6.1</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.jetbrains.teamcity</groupId>
+        <artifactId>teamcity-sdk-maven-plugin</artifactId>
+        <version>0.2</version>
+        <configuration>
+          <teamcityDir>${teamcity.path}</teamcityDir>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
