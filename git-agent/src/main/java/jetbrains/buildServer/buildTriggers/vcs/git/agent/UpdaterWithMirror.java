@@ -419,7 +419,7 @@ public class UpdaterWithMirror extends UpdaterImpl {
                   submodule.getRevisions());
 
         for (String name : submodule.getNames()) {
-          setUseLocalSubmoduleMirror(repositoryDir, name, getLocalMirrorUrl(mirrorRepositoryDir));
+          setUseLocalSubmoduleMirror(r.getDirectory(), name, getLocalMirrorUrl(mirrorRepositoryDir));
         }
       }
     }
